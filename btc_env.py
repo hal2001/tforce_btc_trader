@@ -381,8 +381,8 @@ class BitcoinEnv(Environment):
             step_acc.repeats += 1
             # by the time we hit punish_repeats, we're doubling punishments / canceling rewards. Note: we don't want to
             # multiply by `reward` here because repeats are often 0, which means 0 penalty. Hence `possible_reward`
-            repeat_penalty = self.possible_reward * (step_acc.repeats / self.hypers.punish_repeats)
-            reward -= repeat_penalty
+            # repeat_penalty = self.possible_reward * (step_acc.repeats / self.hypers.punish_repeats)
+            # reward -= repeat_penalty
             # step_acc.value -= repeat_penalty  # TMP: experimenting w/ showing the human & BO
 
         step_acc.i += 1

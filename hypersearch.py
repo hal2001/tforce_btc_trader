@@ -406,8 +406,8 @@ hypers['custom'] = {
     # spanking. I didn't raise no investor, I raised a TRADER
     'punish_repeats': {
         'type': 'bounded',
-        'vals': [1000, 10000],
-        'guess': 10000,
+        'vals': [1000, 5000],
+        'guess': 5000,
         'pre': int
     },
 
@@ -586,7 +586,7 @@ class HSearchEnv(object):
         print(flat, f"\nAdvantage={adv_avg}\n\n")
 
         sql = """
-          insert into runs (hypers, advantage_avg, advantages, uniques, prices, actions, agent, flag) 
+          insert into runs (hypers, advantage_avg, advantages, uniques, prices, actions, agent, flag)
           values (:hypers, :advantage_avg, :advantages, :uniques, :prices, :actions, :agent, :flag)
           returning id;
         """
